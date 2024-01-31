@@ -1,0 +1,1 @@
+python3.9 -m pylint $(git ls-files '*.py')
