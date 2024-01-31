@@ -67,9 +67,9 @@ def format_degrees_as_h_m(angle):
 def main():
     # season durations taken from Eugeniusz Rybka "Astronomia Ogólna"
     e_fitted, offset_fitted = fit_ellipse(92+21/24, # spring
-                                        93+14/24, # summer
-                                        89+18/24, # autumn
-                                        89+1/24) # winter
+                                          93+14/24, # summer
+                                          89+18/24, # autumn
+                                          89+1/24) # winter
 
     print(f"e = {e_fitted:.5f}, offset = {format_degrees_as_h_m(offset_fitted)}")
 
