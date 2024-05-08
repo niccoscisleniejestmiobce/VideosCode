@@ -182,22 +182,22 @@ def main():
     # N 50 3' 41.15''
     # E 19 56' 11.69
     positions = get_positions(
-        h1=radians(28 + 57 / 60 + 11.1 / 3600),
+        h1=radians(50 + 21 / 60),
         time1=datetime.datetime(
             2024,
             4,
             21,
-            8,
+            11,
             43,
             1,
             tzinfo=datetime.timezone(offset=datetime.timedelta(hours=2)),
         ),
-        h2=radians(18 + 17 / 60 + 28.6 / 3600),
+        h2=radians(49 + 51 / 60),
         time2=datetime.datetime(
             2024,
             4,
             21,
-            17,
+            13,
             43,
             1,
             tzinfo=datetime.timezone(offset=datetime.timedelta(hours=2)),
