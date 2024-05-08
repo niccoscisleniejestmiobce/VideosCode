@@ -21,6 +21,8 @@ jobs:
         pip install pylint==2.4.4
         pip install scipy==1.7.3
         pip install numpy==1.24.4
+        pip install pandas==1.4.0
+        pip install pytz==2023.3
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
