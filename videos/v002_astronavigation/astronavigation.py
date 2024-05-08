@@ -159,14 +159,14 @@ def _curves_intersection(y1, y2, x):
 
 
 def get_positions(
-    h1: float,
-    time1: datetime.datetime,
-    h2: float,
-    time2: datetime.datetime,
-    declination1=None,
-    declination2=None,
-    refraction_correction=True,
-):
+        h1: float,
+        time1: datetime.datetime,
+        h2: float,
+        time2: datetime.datetime,
+        declination1=None,
+        declination2=None,
+        refraction_correction=True,
+    ):
     if refraction_correction:
         h1 -= atmospheric_refraction(h1)
         h2 -= atmospheric_refraction(h2)
@@ -205,9 +205,13 @@ def main():
     )
 
     for position in positions:
-        n_or_s = "N" if position[0] > 0 else "S"
-        w_or_e = "E" if position[1] > 0 else "W"
-        print(f"{radians_as_degrees(abs(position[0]))} {n_or_s} {radians_as_degrees(abs(position[1]))} {w_or_e}")
+        latitude, longitude = position
+        n_or_s = "N" if latitude > 0 else "S"
+        w_or_e = "E" if longitude > 0 else "W"
+
+        formatted_latitude = radians_as_degrees(abs(latitude))
+        formatted_longitude = radians_as_degrees(abs(longitude))
+        print(f"{formatted_latitude} {n_or_s} {formatted_longitude} {w_or_e}")
 
 
 if __name__ == "__main__":
